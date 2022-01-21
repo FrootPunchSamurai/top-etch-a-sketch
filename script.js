@@ -14,25 +14,25 @@ let currentColor;
 slider.defaultValue = 16;
 createGrid(16);
 
-slider.oninput = function(){
+slider.oninput = function () {
     initGrid();
 };
 
-function initGrid(){
+function initGrid() {
     let val = parseInt(slider.value);
     grid.innerHTML = '';
     createGrid(val);
 }
 
-function setColorMode(e){
+function setColorMode(e) {
     let btnClicked = e.target.value;
-    
+
 
     switch (btnClicked) {
         case 'rainbow':
             colorMode = 'rainbow'
             break;
-        
+
         case 'random':
             colorMode = 'random';
             break;
@@ -40,23 +40,23 @@ function setColorMode(e){
         case 'blacken':
             colorMode = 'black';
             break;
-        
+
         case 'darken':
             colorMode = 'darken';
             break;
-    
+
         default:
             colorMode = 'colorpick'
             break;
     }
 }
 
-function random(){
+function random() {
     let rand = Math.floor(Math.random() * 255);
     return rand;
 }
 
-function randomColor(){
+function randomColor() {
     let red = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
@@ -65,12 +65,12 @@ function randomColor(){
 }
 
 
-function createGrid(size){
+function createGrid(size) {
 
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    for(let i=0; i<size*size; i++){
+    for (let i = 0; i < size * size; i++) {
         const gridElement = document.createElement('div');
         gridElement.addEventListener('mouseover', changeColor);
         gridElement.classList.add('grid-item');
@@ -78,38 +78,38 @@ function createGrid(size){
     }
 }
 
-function chooseRandomColor(){
+function chooseRandomColor() {
     currentColor = randomColor();
 }
 
-function clearGrid(){
+function clearGrid() {
     initGrid();
 }
 
-function changeColor(e){
+function changeColor(e) {
     const target = e.target;
 
-    if(colorMode == "rainbow"){
-        target.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`      
-    }
-    
-    if(colorMode == "black"){
-        target.style.backgroundColor = "black";
-        
-    }
-    
-    if(colorMode == "darken"){
-            let currentOpacity = Number(target.style.backgroundColor.slice(-4, -1));
-            if (currentOpacity <= 0.9) {
-                target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
-            }
+    if (colorMode == "rainbow") {
+        target.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`
     }
 
-    if(colorMode == "random"){
+    if (colorMode == "black") {
+        target.style.backgroundColor = "black";
+
+    }
+
+    if (colorMode == "darken") {
+        let currentOpacity = Number(target.style.backgroundColor.slice(-4, -1));
+        if (currentOpacity <= 0.9) {
+            target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
+        }
+    }
+
+    if (colorMode == "random") {
         target.style.backgroundColor = `rgb(${currentColor})`;
     }
 
-    if(colorMode == "colorpick"){
+    if (colorMode == "colorpick") {
         target.style.backgroundColor = myColor.value;
     }
 }

@@ -23,6 +23,10 @@
     height: 5px;
 }
 
+#clear{
+    margin-top: 5px;
+}
+
 .slider {
     margin-top: 20px;
     -webkit-appearance: none;
