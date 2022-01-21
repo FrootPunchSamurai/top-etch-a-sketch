@@ -6,7 +6,7 @@ const blacken = document.getElementById('blacken');
 const randomed = document.getElementById('random');
 const darken = document.getElementById('darken');
 const myColor = document.getElementById('mycolor');
-
+const clear = document.getElementById('clear')
 
 let colorMode = 'black';
 let currentColor;
@@ -82,6 +82,10 @@ function chooseRandomColor(){
     currentColor = randomColor();
 }
 
+function clearGrid(){
+    initGrid();
+}
+
 function changeColor(e){
     const target = e.target;
 
@@ -114,7 +118,8 @@ rainbow.addEventListener('click', setColorMode);
 randomed.addEventListener('click', setColorMode);
 randomed.addEventListener('click', chooseRandomColor);
 blacken.addEventListener('click', setColorMode);
-myColor.addEventListener('change', setColorMode)
+myColor.addEventListener('change', setColorMode);
 darken.addEventListener('click', setColorMode);
+clear.addEventListener('click', clearGrid);
 
 
