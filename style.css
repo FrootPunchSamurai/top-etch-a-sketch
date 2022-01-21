@@ -1,0 +1,15 @@
+#grid{
+    display: grid;
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+}
+
+.grid-item{
+    border: 1px solid black;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
