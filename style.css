@@ -1,23 +1,143 @@
-header{
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+
+.button {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+#mycolor {
+    padding: 5px;
+    height: 5px;
+}
+
+.slider {
+    margin-top: 20px;
+    -webkit-appearance: none;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(236, 236, 67);
+    cursor: pointer;
+}
+
+.rainbow {
+    transition-duration: 0.4s;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+}
+
+.random {
+    animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+    0% {
+        border: 5px solid red;
+    }
+
+    25% {
+        border: 5px solid rgb(0, 132, 255);
+    }
+
+    50% {
+        border: 5px solid rgb(81, 255, 0);
+    }
+
+    75% {
+        border: 5px solid rgb(255, 230, 0);
+    }
+
+    100% {
+        border: 5px solid rgb(225, 0, 255);
+    }
+}
+
+.blacken {
+    border: 5px solid black
+}
+
+.darken {
+    border: 5px solid grey;
+}
+
+body {
+    background-color: rgb(209, 26, 26);
+}
+
+header {
     text-align: center;
 }
 
-#grid{
+.buttons {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px;
+}
+
+#grid {
     display: grid;
+    background-color: #fff;
     border: 1px solid black;
     height: 500px;
     width: 500px;
 }
 
-.grid-item{
+.grid-item {
     border: 1px solid black;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
 }
 
-.black{
+.slide-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.black {
     background-color: black;
 }
