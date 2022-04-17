@@ -1,6 +1,6 @@
 # Etch-a-Sketch  
 
-A web based etch-a-sketch , built using html, css and javascript
+A web based etch-a-sketch, built using html, css and javascript
 
 ## :point_down: Live Demonstration  
 
